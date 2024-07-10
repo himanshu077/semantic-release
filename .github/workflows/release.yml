@@ -17,6 +17,9 @@ jobs:
           node-version: 16
       - run: npm ci
       - run: npm run build
-      - run: npx semantic-release
+
+      - name: Semantic Release
+        uses: go-semantic-release/action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        id: semantic
