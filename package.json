@@ -1,30 +1,30 @@
 {
-  "name": "daves-youtube-demo-action",
-  "version": "1.0.1",
-  "description": "This repository accompanies my Youtube Series on how to create and release actions.",
-  "main": "index.js",
+  "name": "go-semantic-release-action",
+  "version": "0.0.0-development",
+  "main": "src/index.js",
   "scripts": {
-    "build": "node esbuild.cjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "eslint src/** && tsc --noEmit ./src/index.ts",
+    "fix": "eslint --fix src/**",
+    "build": "bun build ./src/index.js --target=node --outfile=dist/index.mjs",
+    "prepare": "husky"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/davelosert/daves-youtube-demo-action.git"
-  },
-  "keywords": [],
-  "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/davelosert/daves-youtube-demo-action/issues"
-  },
-  "homepage": "https://github.com/davelosert/daves-youtube-demo-action#readme",
   "dependencies": {
-    "@actions/core": "1.10.0"
+    "@actions/core": "^1.10.1",
+    "@actions/exec": "^1.1.1",
+    "@actions/tool-cache": "^2.0.1",
+    "semver": "^7.3.8"
   },
   "devDependencies": {
-    "@semantic-release/git": "10.0.1",
-    "@semantic-release/github": "8.0.6",
-    "esbuild": "0.15.11",
-    "semantic-release": "19.0.5"
+    "@types/node": "^20.11.19",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
+    "eslint": "^8.33.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^9.0.11",
+    "typescript": "^5.3.3"
   }
 }
