@@ -2,6 +2,12 @@
   "name": "go-semantic-release-action",
   "version": "0.0.0-development",
   "main": "src/index.js",
+  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/himanshu077/semantic-release.git"
+  },
+  
   "scripts": {
     "test": "eslint src/** && tsc --noEmit ./src/index.ts",
     "fix": "eslint --fix src/**",
